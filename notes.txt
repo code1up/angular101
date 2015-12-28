@@ -1,0 +1,11 @@
+DOING: HTML linter: https://www.npmjs.com/package/htmllint?
+
+TODO: gulp / webpack
+TODO: jasmine + protractor
+TODO: live reloading
+TODO: OFFTOPIC: service workers
+TODO: REVISION: scripts int HEAD vs after BODY
+TODO: VSCODE: ng autocomplete
+
+
+DONE: jshint for HTML: "jshint --extract=auto index.html"
