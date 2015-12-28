@@ -15,7 +15,11 @@
     
     app.directive("batman", function BatmanDirective () {
         return function (scope, elem, attrs) {
-            elem.text(attrs.preamble + ": " + attrs.message);  
+            elem.text(attrs.preamble + ": " + attrs.message);
+            
+            elem.bind("mouseenter", function () {
+                console.log("batman::mouseenter");    
+            });
         };     
     });
     
