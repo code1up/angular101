@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<title>Hello World</title>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <h1>Hello World</h1>
+    <hr>
+    <div ng-controller="SearchCtrl as search">
+        <input type="text" autofocus ng-model="searchText.$"> {{ search.avengers.cast.length }}
+
+        <table>
+            <tr ng-repeat="actor in search.avengers.cast | filter:searchText | orderBy: 'name' | limitTo: 3">
+                <td>{{ actor.name }}</td>
+                <td>{{ actor.character }}</td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
