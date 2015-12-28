@@ -12,11 +12,28 @@
                 url: "",
                 controller: "FirstCtrl as first",
                 templateUrl: "templates/first.html"          
+            });
+                      
+            $stateProvider.state("second", {
+                url: "/second",
+                controller: "SecondCtrl as second",
+                templateUrl: "templates/second.html"          
             });          
         })
-        .controller("FirstCtrl", function FirstCtrl () {
+        .service("greeting", function Greeting () {
             var that = this;
             
-            that.greeting = "Hello World";
-        });              
+            that.message = "Default";
+        })
+        .controller("FirstCtrl", function FirstCtrl (greeting) {
+            var that = this;
+            
+            that.greeting = greeting;
+        })              
+        .controller("SecondCtrl", function SecondCtrl (greeting) {
+            var that = this;
+            
+            that.greeting = greeting;
+        })
+        ;              
 }());
