@@ -3,9 +3,22 @@
 <title>Hello World</title>
 
 <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
     <script src="app.js"></script>
+    
+    <style>
+        red {
+            font-weight: bold;
+            color: red;
+        }
+        
+        blue {
+            color: blue;
+            font-weight: normal;
+        }
+    </style>
 </head>
 
 <body>
@@ -13,9 +26,10 @@
     <hr>
     <div ng-controller="MyCtrl as my">
         <batman preamble="{{ my.preamble }}" message="To infinity and wherever!"></batman>
-        <superman></superman>
+        <div>
+            <superman enter="badge" leave>Hello</superman>
+        </div>
     </div>
 </body>
 
 </html>
-    

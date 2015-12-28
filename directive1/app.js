@@ -16,10 +16,6 @@
     app.directive("batman", function BatmanDirective () {
         return function (scope, elem, attrs) {
             elem.text(attrs.preamble + ": " + attrs.message);
-            
-            elem.bind("mouseenter", function () {
-                console.log("batman::mouseenter");    
-            });
         };     
     });
     
@@ -28,5 +24,21 @@
            restrict: "E",
            template: "<div>Up, up and away!</div>"  
        };
+    });
+
+    app.directive("enter", function EnterDirective () {
+        return function (scope, elem, attrs) {
+            elem.bind("mouseenter", function () {
+                elem.addClass(attrs.enter);
+            });
+        };     
+    });
+
+    app.directive("leave", function LeaveDirective () {
+        return function (scope, elem, attrs) {
+            elem.bind("mouseleave", function () {
+                elem.removeClass(attrs.enter);
+            });
+        };     
     });
 }());
