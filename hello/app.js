@@ -20,24 +20,28 @@
                 templateUrl: "templates/second.html"          
             });          
         })
-        .service("greeting", function Greeting () {
+        .service("greetingService", function GreetingService () {
             var that = this;
             
             that.message = "Default";
         })
-        .controller("FirstCtrl", function FirstCtrl (greeting) {
+        .service("stringService", function StringService() {
             var that = this;
             
-            that.greeting = greeting;
+            that.reverse = function (message) {
+                return message.split("").reverse().join("");
+            };            
+        })
+        .controller("FirstCtrl", function FirstCtrl (greetingService, stringService) {
+            var that = this;
             
-            that.reversed = function () {
-                return that.greeting.message.split("").reverse().join("");
-            };
+            that.greetingService = greetingService;
+            that.reverse = stringService.reverse;
         })              
-        .controller("SecondCtrl", function SecondCtrl (greeting) {
+        .controller("SecondCtrl", function SecondCtrl (greetingService) {
             var that = this;
             
-            that.greeting = greeting;
+            that.greetingService = greetingService;
         })
         ;              
 }());
