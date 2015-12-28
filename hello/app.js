@@ -29,6 +29,10 @@
             var that = this;
             
             that.greeting = greeting;
+            
+            that.reversed = function () {
+                return that.greeting.message.split("").reverse().join("");
+            };
         })              
         .controller("SecondCtrl", function SecondCtrl (greeting) {
             var that = this;
