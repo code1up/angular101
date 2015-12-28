@@ -2,4 +2,4 @@
 <h1>{{ first.greetingService.message }}</h1>
 <input type="text" ng-model="first.greetingService.message">
 <div ui-sref="second">Go to Second</div>
-<div>Reversed: {{ first.reverse(first.greetingService.message) }}</div>
+<div>Reversed: {{ first.greetingService.message | reverse }}</div>

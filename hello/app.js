@@ -32,6 +32,9 @@
                 return message.split("").reverse().join("");
             };            
         })
+        .filter("reverse", function ReverseFilter(stringService) {
+            return stringService.reverse;
+        })
         .controller("FirstCtrl", function FirstCtrl (greetingService, stringService) {
             var that = this;
             
