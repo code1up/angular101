@@ -9,11 +9,13 @@
 </head>
 
 <body>
-    <h1>Hello World</h1>
+    <h1>Hello!</h1>
     <hr>
     <div ng-controller="MyCtrl as my">
-        <Superman />
+        <batman preamble="{{ my.preamble }}" message="To infinity and wherever!"></batman>
+        <superman></superman>
     </div>
 </body>
 
 </html>
+    
