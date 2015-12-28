@@ -16,7 +16,7 @@
 
         <table>
             <tr ng-repeat="actor in search.avengers.cast | filter:searchText | orderBy: 'name' | limitTo: 3">
-                <td>{{ actor.name }}</td>
+                <td>{{ actor.name | uppercase }}</td>
                 <td>{{ actor.character }}</td>
             </tr>
         </table>
